@@ -21,6 +21,9 @@ public class FakeStoreCategoryGateway implements ICategoryGateway {
             this.fakeStoreCategoryApi = fakeStoreCategoryApi;
         }
 
+
+
+
     @Override
     public List<String> getAllCategories() throws IOException {
         // 1. Make the HTTP request to the FakeStore API to fetch all categories

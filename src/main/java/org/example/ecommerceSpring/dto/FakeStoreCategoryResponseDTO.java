@@ -22,3 +22,9 @@ public class FakeStoreCategoryResponseDTO {
         return categories;
     }
 }
+
+
+
+
+
+

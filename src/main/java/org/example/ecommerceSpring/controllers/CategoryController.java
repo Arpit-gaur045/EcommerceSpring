@@ -4,15 +4,13 @@ package org.example.ecommerceSpring.controllers;
 
 import org.example.ecommerceSpring.dto.CategoryDTO;
 import org.example.ecommerceSpring.services.ICategoryService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/products/categories")
+//@RequestMapping("/products/categories")
 public class CategoryController {
 
     private ICategoryService categoryService;
@@ -21,15 +19,19 @@ public class CategoryController {
         this.categoryService= _categoryService;
     }
 
-    @GetMapping
-    public List<CategoryDTO> getCategory() throws Exception{
-        return this.categoryService.getAllCategories();
+    @GetMapping("/products/categories")
+    public ResponseEntity<List<CategoryDTO>> getCategory() throws Exception{
+        List<CategoryDTO> result = this.categoryService.getAllCategories();
+        return ResponseEntity.ok(result);
     }
+
+
 
     @PostMapping
     public String postCategory(){
         return "post Electronics";
     }
+
 
 
 }
