@@ -15,7 +15,7 @@ public class FakeStoreCategoryService implements ICategoryService {
 
     private final ICategoryGateway categoryGateway;
 
-    public FakeStoreCategoryService(@Qualifier("fakeStoreRestTemplateGateway")  ICategoryGateway categoryGateway) {
+    public FakeStoreCategoryService(@Qualifier("fakeStoreRestTemplateGateway") ICategoryGateway categoryGateway) {
         this.categoryGateway = categoryGateway;
     }
 
@@ -23,14 +23,8 @@ public class FakeStoreCategoryService implements ICategoryService {
 
     @Override
     public List<CategoryDTO> getAllCategories() throws IOException {
-         List<CategoryDTO> dtoList= this.categoryGateway.getAllCategories().stream()
-                .map(category -> {
-                    CategoryDTO dto = new CategoryDTO();
-                    dto.setName(category);
-                    return dto;
-                })
-                .toList();;
-                return dtoList;
+         List<CategoryDTO> dtoList= this.categoryGateway.getAllCategories();
+         return dtoList;
     }
 
 

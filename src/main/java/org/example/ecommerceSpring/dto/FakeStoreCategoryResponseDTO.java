@@ -12,15 +12,13 @@ import java.util.List;
 @Builder
 public class FakeStoreCategoryResponseDTO {
 
-    private String status;
-
-    private String message;
-
     private List<String> categories;
 
     public List<String> getCategories() {
         return categories;
     }
+
+
 }
 
 
