@@ -23,7 +23,8 @@ public class FakeStoreProductGateway implements IProductGateway{
         if(response==null){
             throw new Exception("Product not found");
         }
-        ProductDTO result = new ProductDTO(response.getImage(),response.getPrice(),response.getDescription(),response.getId(),response.getTitle(),response.getCategory(),response.getStock(),response.getBrand());
-        return result;
+        return ProductDTO.builder().price(response.getPrice()).image(response.getImage()).description(response.getDescription()).id(response.getId()).title(response.getTitle()).category(response.getCategory()).stock(response.getStock()).brand(response.getBrand()).build();
+       // ProductDTO result = new ProductDTO(response.getImage(),response.getPrice(),response.getDescription(),response.getId(),response.getTitle(),response.getCategory(),response.getStock(),response.getBrand());
+       // return result;
     }
 }

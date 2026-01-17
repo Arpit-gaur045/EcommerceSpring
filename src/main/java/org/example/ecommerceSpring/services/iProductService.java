@@ -5,4 +5,6 @@ import org.example.ecommerceSpring.dto.ProductDTO;
 public interface iProductService {
 
     ProductDTO getProductById(Long id) throws Exception;
+
+    ProductDTO createProduct(ProductDTO productDTO);
 }
